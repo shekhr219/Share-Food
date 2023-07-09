@@ -1,0 +1,46 @@
+<h6>Dashboard</h6>
+<h3>Welcome {{name}}</h3>
+<p>Here are your stories</p>
+{{#if food_item}}
+<table class="striped">
+    <thead>
+        <tr>
+            <th>FoodName</th>
+            <th>Quantity</th>
+            <th>Wait Time</th>
+            <th>Address</th>
+            <th>Created At</th>
+            <th>Action</th>
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each food_item}}
+        <tr>
+            <td><a href="/food_items/{{_id}}">{{foodName}}</a></td>
+            <td>{{quantity}}</td>
+            <td>{{waitTime}}</td>
+            <td>{{address}}</td>
+            <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+
+            <td>
+                <a href="/food_items/edit/{{_id}}" class="btn btn-float">
+                    <i class="fas fa-edit"></i>
+                </a>
+
+                <form action="/food_items/{{_id}}" method="POST" id="delete-form">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn red">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<p>You have not Posted any Food Item</p>
+{{/if}}

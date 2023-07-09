@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col s12 m8">
+        <h4>{{food_item.foodName}}</h4>
+        <div class="card story">
+            <div class="card-content">
+                <span class="card-title">{{formatDate date 'MMMM Do YYYY, h:mm:ss a'}}</span>
+                <h6>Quantity: {{food_item.quantity}}</h6>
+                <h6>Wait Time: {{food_item.waitTime}}</h6>
+                <h6>Phone Number: {{food_item.phone}}</h6>
+                <h6>Address: {{food_item.address}}</h6>
+                <h6>Description: {{food_item.description}}</h6>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m4">
+        <div class="card center-align">
+            <div class="card-content">
+                <span class="card-title">{{food_item.user.displayName}}</span>
+                <img src="{{food_item.user.image}}" class="circle responsive-img img-small">
+            </div>
+            <div class="card-action">
+                <a href="/food_items/user/{{food_item.user._id}}">More From {{food_item.user.firstName}}</a>
+            </div>
+        </div>
+    </div>
+</div>

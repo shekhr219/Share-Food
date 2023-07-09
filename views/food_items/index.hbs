@@ -1,0 +1,43 @@
+<h1>Food Items</h1>
+<ul class="search-form">
+    <li>    
+        <form id="search-site"  action='/food_items/search/:query' method='get'>
+            <div class="input-group">
+                    <i class="fas fa-search fa-large" ></i>
+                    <div class="input-field">
+                    <input id="search" type="search" name='query' placeholder="Search by title">
+                    <label class="label-icon" for="search">
+                    </label>
+                 </div>
+                <button type="submit" class="input-group-addon btn">search</button>
+            </div>
+
+        </form>  
+    </li>   
+</ul>
+<div class="row">
+    {{#each food_item}}
+    <div class="col s12 m4">
+        <div class="card">
+            <div class="card-image">
+               
+            </div>
+            <div class="card-content center-align">
+                <h5>Food Name:{{foodName}}</h5>
+                <h5>Quantity:{{quantity}}</h5>
+                <h5>Wait Time:{{waitTime}}</h5>
+                <br>
+                <div class="chip">
+                    <img src="{{user.image}}" alt="">
+                    <a href="/food_items/user/{{user._id}}">{{user.displayName}}</a>
+                </div>
+            </div>
+            <div class="card-action center-align">
+                <a href="/food_items/{{_id}}" class="btn grey">Read More</a>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <p>No Food Items to display</p>
+    {{/each}}
+</div>

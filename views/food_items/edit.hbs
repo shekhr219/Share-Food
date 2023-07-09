@@ -1,0 +1,56 @@
+<h3>Edit Story</h3>
+<div class="row">
+    <form action="/food_items/{{food_item._id}}" method="POST" class="col s12">
+    <input type="hidden" name="_method" value="PUT">
+        <div class="row">
+            <div class="col">
+            <div class="input-field">
+                <input type="text" id="foodName" name="foodName"value="{{food_item.foodName}}">
+                <label for="foodName">Food Name</label>
+            </div>
+            </div>
+            <div class="col">
+            <div class="input-field">
+                <input type="text" id="quantity" name="quantity"value="{{food_item.quantity}}">
+                <label for="quantity">Quantity</label>
+            </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+            <div class="input-field">
+                <input type="text" id="phone" name="phone"value="{{food_item.phone}}">
+                <label for="phone">Phone Number</label>
+            </div>
+            </div>
+            <div class="col">
+            <div class="input-field">
+                <input type="text" id="waitTime" name="waitTime"value="{{food_item.waitTime}}">
+                <label for="waitTime">Wait Time</label>
+            </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+            <div class="input-field">
+                <input type="text" id="address" name="address"value="{{food_item.address}}">
+                <label for="address">Address</label>
+            </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+            <div class="input-field">
+                <input type="text" id="description" name="description"value="{{food_item.description}}">
+                <label for="description">Description</label>
+            </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>
